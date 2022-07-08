@@ -1,1 +1,55 @@
-"test" 
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>15 Seconds| Crazy Games</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+  <script type="text/javascript">
+    var slugify = (text) => {
+      return (text || '')
+        .replace(/&/g, ' and ')
+        .replace(/[^a-zA-Z0-9]/g, ' ')
+        .trim()
+        .replace(/\s+/g, '-')
+        .toLowerCase();
+    }
+    var options = {
+      author: "Unity Developer",
+      gameName: "15 Seconds",
+      gameSlug: slugify("15 Seconds"),
+      gameLink: "https://www.crazygames.com/game/your-game-here",
+      allowFullscreen: true,
+      locale: "en_US",
+      loader: "unity2020",
+      loaderOptions: {
+        unityLoaderUrl: "Build/2022-07-08.loader.js",
+        unityConfigOptions: {
+          "dataUrl": "Build/baf89412260741b60098af083e9adf57.data.br",
+          "frameworkUrl": "Build/28a6f3df7891d9bc3d716be75a95279e.js.br",
+          "codeUrl": "Build/c3b63d59582c8976f1c7c54eb66c3b8f.wasm.br",
+          "streamingAssetsUrl": "StreamingAssets",
+        }
+      },
+      category: "UnitySDK",
+      categoryLink: "https://www.crazygames.com",
+      thumbnail: "https://images.crazygames.com/upcoming.png",
+      gameStatus: "published",
+      dollarRate: 1,
+      sdkDebug: true,
+      gameLink: 'https://www.crazygames.com/testgame',
+      forceTestAds: true,
+    };
+
+    window.CrazyGames = {};
+    window.CrazyGames.options = options;
+  </script>
+  <iframe id="unity" allow="autoplay; fullscreen" style="width: 922px; height: 532px;"></iframe>
+  <script type="text/javascript">
+    var iframe = document.getElementById('unity');
+    iframe.setAttribute('src', 'template.html' + window.location.search);
+  </script>
+</body>
